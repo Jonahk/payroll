@@ -1,1 +1,17 @@
-<p>List your employees here</p>
+<% @employees.each do |employee| %>
+<% if employee.job == "Owner" then  %>
+  <span class="owner"><%= "Name: #{employee.first_name} #{employee.last_name}" %></span>
+
+<% elsif employee.job == "Quota" || employee.job == "Commission" %>
+  <span class="salesperson"><%= "Name: #{employee.first_name} #{employee.last_name}" %></span>
+
+<% else %>
+  <%= "Name: #{employee.first_name} #{employee.last_name}" %>
+<% end %>
+<br />
+<%= "Job: #{employee.job}"%>
+<br />
+<%= "Gross Salary: $#{employee.gross_salary.round(2)}"%> <br />
+
+<%= "Net Pay: $#{employee.net_pay.round(2)}" %> <br /><br />
+<% end %>

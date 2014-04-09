@@ -1,1 +1,10 @@
-<p>List your sales here</p>
+<p>
+<% @sale.each do |lastname, sale| %>
+<%= "Name: #{lastname}" %><br />
+<%= "Sale: $#{sale}" %><br /><br />
+
+
+<% end %>
+</p>
+
+<!--  printf "Net Pay: $%.2f\n", employee.net_pay -->
